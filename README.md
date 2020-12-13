@@ -25,4 +25,3 @@ You can do with the code whatever you like
 ## Acknowledgments
 
 * Pygame community
-* Icon made by Freepik from www.flaticon.com - for testing purposes
