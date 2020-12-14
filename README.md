@@ -9,6 +9,8 @@ It is the GUI version of the previous project **console-chess-python**
 | #TODO | DONE |
 | :---: | :---: |
 | Create the window | ✔️ |
+| Add board | ✔️ |
+| Clickable | ✔️ |
 | Add graphics | ❌ |
 | Integrate with console project | ❌ |
 | Have fun! | ❌ |
