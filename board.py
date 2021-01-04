@@ -37,22 +37,12 @@ class Board:
         self.board[8][6] = Bishop('W', [8,6])
         self.board[1][4] = Queen('B', [1,4])
         self.board[8][4] = Queen('W', [8,4])
-        self.board[8][3] = Queen('W', [8,3])
         self.board[1][5] = King('B', [1,5])
-        self.board[1][4] = King('B', [1,4])
         self.board[8][5] = King('W', [8,5])
         
         for i in range(1, self.size-1, 1):
             self.board[2][i] = Pawn('B', [2, i])
             self.board[7][i] = Pawn('W', [7, i])
-
-        # Only for testing purposes 
-        #self.board[3][3] = Bishop('W', [3,3])
-        #self.board[3][5] = Bishop('W', [3,5])
-        #self.board[8][3] = Queen('W', [8,3])
-        #self.board[1][4] = King('B', [1,4])
-        #self.board[8][5] = King('W', [8,5])
-
 
     def show(self):
         for i in range(self.size):
@@ -109,7 +99,6 @@ class Board:
 
         return check_mate
 
-
     def is_check(self, player, enemy_player, piece_position=None):
         e_nk_moves = self.get_pieces_possible_and_kill_moves(enemy_player, piece_position)
         e_neutral_moves = e_nk_moves['neutral_moves']
@@ -118,10 +107,6 @@ class Board:
         if piece_position == None:
             my_piece = self.get_piece(King, player)
             piece_position = my_piece.get_position()
-
-        #print (e_killing_moves)
-        #print (e_neutral_moves)
-        #print (piece_position)
 
         check = False
         for k in e_killing_moves:
@@ -147,12 +132,6 @@ class Board:
         neutral_moves = nk_moves['neutral_moves']
         killing_moves = nk_moves['killing_moves']
         
-        # For Logging purposes!
-        print ('[Log: All Possible Piece Moves]', piece_moves)
-        print ('[Log: Piece Moves]', neutral_moves)
-        #print ('[Log: Kill Moves]', kill_moves)
-        #print ('[Log: Move To]', mt)
-
         if (mt not in neutral_moves) and (mt not in killing_moves):
             print ('Cannot update the move! Try again...')
             return False
